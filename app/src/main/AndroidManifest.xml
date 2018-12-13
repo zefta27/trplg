@@ -6,35 +6,53 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_transit"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_transit"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value=" AIzaSyATg-pIQGa92LmVv_HAZ5T26cR-OTXQGQs " />
+            android:value="AIzaSyASRqynFx0390GR-sk47OmvadD0b88Oezg" />
+
+        <!-- android:value=" AIzaSyATg-pIQGa92LmVv_HAZ5T26cR-OTXQGQs " -->
 
         <activity
-            android:name=".HomeActivity"
-            android:label="@string/app_name"
+            android:name=".Activity.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".dijkstra.MainActivity">
+            <uses-feature android:name="android.hardware.location.gps" />
+        </activity>
+        <activity android:name=".Activity.tangkapDataActivity" />
+        <activity android:name=".Activity.TempatWisataActivity" />
+        <activity
+            android:name=".Activity.PerkiraanActivity"
+            android:label="Perkiraan Waktu Tempuh" />
+        <activity android:name=".dijkstra.MainWebActivity" />
+        <activity
+            android:name=".Activity.WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dijkstra.MainActivity">
-            <uses-feature android:name="android.hardware.location.gps" />
+        <activity
+            android:name=".SplashScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+
         </activity>
-        <activity android:name=".tangkapDataActivity"></activity>
+        <activity android:name=".Activity.TimelineApproximationActivity"></activity>
     </application>
 
 </manifest>

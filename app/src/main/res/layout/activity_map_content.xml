@@ -71,6 +71,7 @@
 
                     <EditText
                         android:id="@+id/et_awal"
+                        android:text="Bourdelle Museum, Paris"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -81,7 +82,6 @@
                         android:hint="Pickup Location"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="Bourdelle Museum, Paris"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                         android:textColor="@color/grey_text"
                         android:textStyle="bold" />

@@ -5,68 +5,167 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="palembang.gelumbang.zefta.uwalq.transitpalembang.HomeActivity"
+    tools:context="palembang.gelumbang.zefta.uwalq.transitpalembang.Activity.HomeActivity"
     tools:showIn="@layout/app_bar_main"
     android:padding="21dp"
     >
-    <LinearLayout
-        android:layout_width="wrap_content"
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        >
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_margin="@dimen/spacing_middle"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardUseCompatPadding="false"
+        app:elevation="4dp"
 
+        android:layout_centerInParent="true">
 
-            <EditText
-                android:id="@+id/et_tujuanawal"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content" />
-            <ImageButton
-                android:onClick="onClickStartLcocation"
-                android:layout_toRightOf="@+id/et_tujuanawal"
-                android:id="@+id/btn_lokasiawal"
-                android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lokasi Awal"
-                app:srcCompat="@android:drawable/ic_menu_mylocation"
-                android:background="@color/colorAccent"
-                />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_tujuanakhir"/>
-            <ImageButton
-                android:onClick="onclickEndocation"
-                android:background="@color/colorAccent"
-                android:layout_toRightOf="@+id/et_tujuanakhir"
-                android:id="@+id/btn_lokasiakhir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button"
-                app:srcCompat="@android:drawable/ic_menu_mylocation"
+                android:text="Mau Kemana Hari ini?"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/colorTheme"
                 />
 
-     </LinearLayout>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/spacing_large"
+                    android:paddingLeft="@dimen/spacing_large"
+                    android:paddingRight="@dimen/spacing_large"
+                    android:paddingTop="@dimen/spacing_large">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/pin" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_dash_line_vert" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/pin" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <com.balysv.materialripple.MaterialRippleLayout
+                        android:id="@+id/lyt_pickup"
+                        style="@style/RippleStyleBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <EditText
+                            android:id="@+id/et_tujuanawal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/transparent"
+                            android:editable="false"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:hint="Tujuan Awal"
+                            android:maxLines="1"
+                            android:onClick="onClickStartLcocation"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textColor="@color/grey_text"
+                            android:textStyle="bold" />
+                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_bg" />
+
+                    <com.balysv.materialripple.MaterialRippleLayout
+                        android:id="@+id/lyt_destination"
+                        style="@style/RippleStyleBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp">
+
+                        <EditText
+                            android:id="@+id/et_tujuanakhir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/transparent"
+                            android:clickable="true"
+                            android:editable="false"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:hint="Tujuan Akhir"
+                            android:maxLines="1"
+                            android:onClick="onclickEndocation"
+                            android:singleLine="true"
+                            android:text="Tujuan Akhir"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textColor="@color/grey_text"
+                            android:textStyle="bold" />
+                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    
     <Button
+        android:textColor="#fff"
         android:id="@+id/btn_Go"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/colorTheme"
+        android:text="GO by SQLITE"
+        android:onClick="onCLickGo"
+        android:layout_above="@+id/btn_Go_mysql"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:textColor="#fff"
+        android:id="@+id/btn_Go_mysql"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorTheme"
+        android:text="GO by MYSQL"
+        android:onClick="onCLickGoMysql"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="GO"
-        android:onClick="onCLickGo"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <!--<TextView-->
         <!--android:id="@+id/tv_tujuanawal"-->
         <!--android:layout_width="wrap_content"-->

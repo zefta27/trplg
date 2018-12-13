@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dijkstra.MainWebActivity" >
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/relativeLayout1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:orientation="vertical" >-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical|start"-->
+    <!--android:text="Lokasi Anda"-->
+    <!--android:textSize="20sp" />-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/linearLayout"-->
+    <!--android:layout_below="@+id/textView1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
+    <!--<EditText-->
+    <!--android:layout_below="@id/textView1"-->
+    <!--android:id="@+id/et_posisi_awal"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical|center"-->
+    <!--android:ems="10"-->
+    <!--android:inputType="text"-->
+    <!--android:labelFor="@+id/editText1">-->
+    <!--<requestFocus/>-->
+    <!--</EditText>-->
+
+    <!--<Button-->
+    <!--android:layout_below="@+id/et_posisi_awal"-->
+    <!--android:id="@+id/button1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical|end"-->
+    <!--android:onClick="geoLocate"-->
+    <!--android:text="Go" />-->
+    <!--</LinearLayout>-->
+
+    <!--</RelativeLayout>-->
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@+id/relativeLayout1"
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+        <Toolbar
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"></Toolbar>
+        <fragment android:id="@+id/petaTransit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+        <Button
+            android:onClick="onClickPerkiraan"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perkiraan Waktu"
+            android:id="@+id/btn_est_time"
+            android:textColor="#fff"
+            android:background="@color/colorAccent"
+            />
+    </FrameLayout>
+    <!--<RelativeLayout-->
+    <!--android:layout_below="@+id/content_frame"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_alignParentBottom="true">-->
+    <!--<Button-->
+
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Perkiraan Waktu"-->
+    <!--android:id="@+id/btn_est_time"-->
+    <!--android:textColor="#fff"-->
+    <!--android:background="@color/colorAccent"-->
+    <!--/>-->
+
+    <!--</RelativeLayout>-->
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentTop="true" >-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="96dip"-->
+    <!--android:orientation="vertical"-->
+    <!--android:weightSum="2" >-->
+    <!--<Spinner -->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true" -->
+    <!--android:id="@+id/spinner_list_smk">        -->
+    <!--</Spinner>	-->
+    <!--</LinearLayout>-->
+    <!--</FrameLayout>	-->
+
+</RelativeLayout>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".MainActivity"-->
+    <!--android:orientation="vertical">-->
+    <!--<TextView-->
+        <!--android:text="Latitude Awal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:id="@+id/tvAwalLat"/>-->
+    <!--<TextView-->
+        <!--android:text="Longitude Awal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:id="@+id/tvAwalLng"/>-->
+    <!--<TextView-->
+        <!--android:text="Latitude Tujuan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:id="@+id/tvTujuanLat"/>-->
+    <!--<TextView-->
+        <!--android:text="Longitude Tujuan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:id="@+id/tvTujuanLng"/>-->
+    <!--<TextView-->
+        <!--android:text="Simpul Tercepat"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:id="@+id/tvTercepat"/>-->
+<!--</LinearLayout>-->
